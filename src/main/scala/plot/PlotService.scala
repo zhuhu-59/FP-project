@@ -1,3 +1,6 @@
+// Group: Tyloo
+// Members: Shaolin Liao, Gongze Li, Jikang Guo
+
 package plot
 
 import models.*
@@ -12,6 +15,7 @@ import org.jfree.chart.plot.XYPlot
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer
 import org.jfree.data.time.{Second, TimeSeries, TimeSeriesCollection}
 
+/** Generates a PNG time‑series chart using JFreeChart */
 object PlotService:
 
   def savePng(recs: Seq[EnergyRecord], out: File, title: String): File =

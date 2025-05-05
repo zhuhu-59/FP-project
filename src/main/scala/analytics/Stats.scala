@@ -1,9 +1,14 @@
+// Group: Tyloo
+// Members: Shaolin Liao, Gongze Li, Jikang Guo
+
 package analytics
 
 import scala.annotation.tailrec
 
+/** Pure statistical helpers used by the CLI */
 object Stats:
 
+    /** Tail‑recursive sum + count for mean() */
   @tailrec
   private def sumAndCount(xs: List[Double], accSum: Double, accCnt: Int): (Double, Int) =
     xs match

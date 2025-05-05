@@ -1,3 +1,6 @@
+// Group: Tyloo
+// Members: Shaolin Liao, Gongze Li, Jikang Guo
+
 package api
 
 import sttp.client4.*
@@ -85,6 +88,7 @@ object FingridClient:
       raw: Vector[Point], ctor: (LocalDateTime, Double) => T
   ) = raw.map(p => ctor(utc2Fi(p.startTime), p.value))
 
+  /* Convenience wrappers returning domain records */
   def solar(st: LocalDateTime, en: LocalDateTime) =
     fetchRange(248, st, en).map(mapRec(_, SolarRecord.apply))
 

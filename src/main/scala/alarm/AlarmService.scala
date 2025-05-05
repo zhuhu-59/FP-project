@@ -1,3 +1,6 @@
+// Group: Tyloo
+// Members: Shaolin Liao, Gongze Li, Jikang Guo
+
 package alarm
 
 object AlarmService:
@@ -12,7 +15,8 @@ object AlarmService:
 
   def update(kind: String, v: Double): Unit =
     thresholds = thresholds.updated(kind, v)
-
+  
+  /** Return Some(alert) if value below threshold */
   def lowAlert(kind: String, value: Double): Option[String] =
     val th = thresholds(kind)
     if value < th then Some(s" $kind output low: ${value} MW (threshold $th MW)")

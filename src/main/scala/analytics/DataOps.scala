@@ -1,3 +1,6 @@
+// Group: Tyloo
+// Members: Shaolin Liao, Gongze Li, Jikang Guo
+
 package analytics
 
 import models.*
@@ -7,9 +10,11 @@ import java.time.temporal.WeekFields
 import scala.util.Try
 
 object DataOps:
-
+  
+  /** Time grain used by filter command */
   enum PeriodKind { case Hour, Day, Week, Month }
 
+  /** One aggregated row written by filter -> CSV */
   case class AggRow(label: String,
                     kind: String,
                     sum: Double,

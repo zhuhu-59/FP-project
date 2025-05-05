@@ -1,7 +1,11 @@
+// Group: Tyloo
+// Members: Shaolin Liao, Gongze Li, Jikang Guo
+
 package analytics
 
 import org.scalatest.funsuite.AnyFunSuite
 
+/* Simple munit unit tests for Stats helpers */
 class StatsSpec extends AnyFunSuite:
   private val xs = Seq(10.0, 20.0, 10.0, 40.0)
 

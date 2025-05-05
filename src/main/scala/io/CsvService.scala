@@ -1,3 +1,6 @@
+// Group: Tyloo
+// Members: Shaolin Liao, Gongze Li, Jikang Guo
+
 package io
 
 import java.nio.file.{Files, Path}
@@ -5,13 +8,14 @@ import scala.util.{Using, Try}
 import com.github.tototoshi.csv.*
 import models.*
 
+/** Read / write EnergyRecord as simple CSV (Time, MW, Kind) */
 object CsvService:
 
 
-  private enum Col { case Time, MW, Kind }
+  private enum Col { case Time, MW, Kind } // column headers
   private val header = Col.values.map(_.toString)
 
-
+    /** Write records; append = true appends to existing file */
   def save[T <: EnergyRecord](
       recs:  Seq[T],
       file:  Path,
@@ -30,7 +34,8 @@ object CsvService:
       }
       w.close()
     }.toEither
-
+    
+    /** Load records; returns Either for error handling */
   def load(file: Path): Either[Throwable, Seq[EnergyRecord]] =
     Try {
       val r   = CSVReader.open(file.toFile)
