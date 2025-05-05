@@ -9,12 +9,19 @@ lazy val root = project
     scalaVersion := scala3Version,
 
     libraryDependencies ++= Seq(
-    "org.scalameta" %% "munit"           % "1.0.0"      % Test,
-    "com.softwaremill.sttp.client4" %% "core"          % "4.0.0-M11",
-    "io.circe"                       %% "circe-core"    % "0.15.0-M1",
-    "io.circe"                       %% "circe-parser"  % "0.15.0-M1",
-    "com.github.tototoshi"          %% "scala-csv"     % "1.3.10",
-    "org.scalatest"                 %% "scalatest"     % "3.2.18" % Test
-  )
+    "com.softwaremill.sttp.client4" %% "core"   % "4.0.0-M11",
+    "com.softwaremill.sttp.client4" %% "circe"  % "4.0.0-M11",
+
+    "io.circe" %% "circe-core"    % "0.15.0-M1",
+    "io.circe" %% "circe-generic" % "0.15.0-M1",
+    "io.circe" %% "circe-parser"  % "0.15.0-M1",
+    "io.github.cdimascio" % "java-dotenv" % "5.2.2",
+
+    "com.github.tototoshi" %% "scala-csv" % "1.3.10",
+    "org.jfree" % "jfreechart" % "1.5.4",
+
+  
+    "org.scalatest" %% "scalatest" % "3.2.18" % Test 
+    )
 
   )
